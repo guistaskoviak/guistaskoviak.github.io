@@ -6,15 +6,16 @@
   <title>Guilherme & Maria Eduarda | Curitiba 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-color: #f3f4f6;
-      --card-bg: rgba(255, 255, 255, 0.98);
+      --card-bg: #ffffff;
       --text-main: #1f2937;
-      --text-muted: #4b5563;
-      --primary: #008000;
-      --secondary: #1c8ef0;
+      --text-muted: #6b7280;
+      --green: #4ca626;
+      --green-dark: #2f8f3f;
+      --green-light: #8dc63f;
+      --blue: #1c8ef0;
     }
 
     * {
@@ -25,10 +26,7 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background-image: url('pattern.png');
-      background-size: 600px; /* Ajustado para não ficar muito esticado */
-      background-attachment: fixed;
-      background-position: center;
+      background: #eef0f3;
       color: var(--text-main);
       display: flex;
       justify-content: center;
@@ -36,185 +34,150 @@
       min-height: 100vh;
     }
 
-    /* Container estilo Linktree (mais estreito) */
     .container {
       width: 100%;
-      max-width: 480px; 
+      max-width: 540px;
     }
 
     .card {
       background: var(--card-bg);
-      border-radius: 28px;
+      border-radius: 32px;
       overflow: hidden;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-      backdrop-filter: blur(10px);
-      padding-bottom: 20px;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.25);
+      padding-bottom: 30px;
     }
 
+    /* Banner com o padrão do congresso */
     .banner {
-      height: 140px;
+      height: 170px;
       background-image: url('pattern.png');
       background-size: cover;
       background-position: center;
       position: relative;
     }
 
-    /* Sobreposição escura no banner para destacar o logo */
-    .banner::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.15);
-    }
-
-    .logo-wrapper {
-      position: absolute;
-      right: 20px;
-      top: 20px;
-      width: 110px; /* Logo menor e mais elegante */
-      background: white;
-      padding: 8px;
-      border-radius: 14px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      z-index: 2;
-    }
-
-    .logo-wrapper img {
-      width: 100%;
-      display: block;
-    }
-
     .profile-section {
       text-align: center;
-      padding: 0 24px;
-      margin-top: -55px; /* Puxa a foto para cima do banner */
+      padding: 0 28px;
+      margin-top: -85px;
       position: relative;
       z-index: 2;
     }
 
+    /* Foto grande e circular, sobrepondo o banner */
     .photo {
-      width: 110px;
-      height: 110px;
+      width: 230px;
+      height: 230px;
       object-fit: cover;
       border-radius: 50%;
-      border: 4px solid white;
+      border: 6px solid white;
       background: white;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
     }
 
     h1 {
-      margin-top: 16px;
-      font-size: 1.6rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
+      margin-top: 18px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.15;
+      color: var(--green);
     }
 
     .location {
-      margin-top: 6px;
-      color: var(--secondary);
-      font-weight: 600;
-      font-size: 0.95rem;
+      margin-top: 10px;
+      color: var(--blue);
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 500;
+      font-size: 1.25rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 4px;
+      gap: 6px;
     }
 
+    .location svg { width: 22px; height: 22px; }
+
     .bio {
-      margin-top: 16px;
+      margin-top: 18px;
       color: var(--text-muted);
       font-size: 0.95rem;
       line-height: 1.6;
     }
 
-    .languages {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .lang {
-      background: #f3f4f6;
-      color: var(--text-main);
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      border: 1px solid #e5e7eb;
-    }
-
-    .convention-card {
-      margin: 25px 24px 10px;
-      background: linear-gradient(135deg, rgba(0, 128, 0, 0.08), rgba(28, 142, 240, 0.08));
-      border: 1px solid rgba(28, 142, 240, 0.15);
-      padding: 18px;
-      border-radius: 16px;
-      text-align: center;
-    }
-
-    .convention-card strong {
-      display: block;
-      color: var(--primary);
-      font-size: 1.05rem;
-      margin-bottom: 6px;
-    }
-
-    .convention-card p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
+    .bio strong { color: var(--text-main); }
 
     .links-section {
-      padding: 20px 24px;
+      padding: 22px 28px 0;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 16px;
     }
 
+    /* Botões estilo pílula com gradiente verde */
     .btn {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
       text-decoration: none;
-      color: white;
-      font-weight: 600;
-      font-size: 1rem;
-      padding: 16px;
-      border-radius: 50px; /* Formato pílula clássico do Linktree */
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      color: #1c4012;
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 500;
+      font-size: 1.15rem;
+      padding: 18px 24px;
+      border-radius: 50px;
+      background: linear-gradient(90deg, var(--green-dark), var(--green-light));
+      box-shadow: 0 8px 18px rgba(47, 143, 63, 0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 12px 24px rgba(47, 143, 63, 0.35);
     }
 
-    /* Cores das marcas */
-    .btn.whatsapp { background: #25D366; }
-    .btn.email { background: #EA4335; }
-    .btn.maps { background: #4285F4; }
-    .btn.contact { background: #374151; }
+    /* Círculo do ícone à esquerda */
+    .btn .icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 38px;
+      height: 38px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn .icon svg { width: 22px; height: 22px; }
 
     .footer {
       text-align: center;
-      padding: 24px;
-      margin-top: 10px;
-      border-top: 1px solid #f3f4f6;
+      padding: 28px 28px 0;
+      margin-top: 20px;
       color: var(--text-muted);
       font-size: 0.85rem;
       line-height: 1.6;
     }
 
-    @media(max-width: 480px) {
+    .footer strong {
+      font-family: 'Fredoka', sans-serif;
+      color: var(--green-dark);
+    }
+
+    @media(max-width: 440px) {
       body { padding: 15px; }
-      .card { border-radius: 24px; }
-      h1 { font-size: 1.4rem; }
-      .bio { font-size: 0.9rem; }
+      .card { border-radius: 26px; }
+      h1 { font-size: 1.7rem; }
+      .photo { width: 150px; height: 150px; }
+      .profile-section { margin-top: -75px; }
+      .btn {
+        font-size: 0.95rem;
+        padding: 16px 52px;
+      }
     }
   </style>
 </head>
@@ -222,57 +185,65 @@
 
   <div class="container">
     <div class="card">
-      
-      <div class="banner">
-        <div class="logo-wrapper">
-          <img src="logo.png" alt="Curitiba 2026 Logo">
-        </div>
-      </div>
+
+      <div class="banner"></div>
 
       <div class="profile-section">
         <img src="photo.jpeg" class="photo" alt="Guilherme and Maria Eduarda">
-        
-        <h1>Guilherme & Maria Eduarda</h1>
-        <div class="location">📍 Curitiba • Paraná • Brazil</div>
+
+        <h1>Guilherme &amp;<br>Maria Eduarda</h1>
+
+        <div class="location">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Curitiba – Paraná – Brazil
+        </div>
 
         <p class="bio">
-          <strong>Welcome to Curitiba!</strong><br><br>
-          We're delighted to welcome you to Brazil and the International Convention Curitiba 2026. Feel free to contact us if you need help with transportation, local information, recommendations, or restaurants.
+          <br>
+          It’s a privilege to be with you at the Curitiba 2026 International Convention.
+          We hope you take home beautiful memories of your time in Brazil.
+          <br> 
+          May Jehovah continue to bless your faithful efforts back home until we meet again.
+          <br><br>
+          <strong>"For I am longing to see you... that we may have an interchange of encouragement." — Romans 1:11, 12</strong>
+          <br><br>
         </p>
 
-        <div class="languages">
-          <div class="lang">🇧🇷 Português</div>
-          <div class="lang">🇺🇸 English</div>
-          <div class="lang">🇪🇸 Español</div>
-        </div>
-      </div>
-
-      <div class="convention-card">
-        <strong>International Convention Curitiba 2026</strong>
-        <p>We look forward to welcoming delegates from all around the world.</p>
-      </div>
-
       <div class="links-section">
-        <a class="btn whatsapp" href="https://wa.me/5541988042213" target="_blank">
-          📱 WhatsApp - Guilherme
+        <a class="btn" href="https://wa.me/5541988042213" target="_blank">
+          <span class="icon">
+            <svg viewBox="0 0 24 24" fill="#25D366"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.13c-.24.68-1.42 1.31-1.95 1.36-.5.05-1.13.07-1.83-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.36-.15-.19-1.18-1.57-1.18-2.99 0-1.42.75-2.12 1.01-2.41.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.59.82 2.04.89 2.19.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.61-.13.25.09 1.59.75 1.86.89.27.14.45.2.52.31.07.12.07.68-.17 1.36z"/></svg>
+          </span>
+          WhatsApp – Guilherme
         </a>
-        <a class="btn whatsapp" href="https://wa.me/5541995074210" target="_blank">
-          📱 WhatsApp - Maria Eduarda
+
+        <a class="btn" href="https://wa.me/5541995074210" target="_blank">
+          <span class="icon">
+            <svg viewBox="0 0 24 24" fill="#25D366"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.13c-.24.68-1.42 1.31-1.95 1.36-.5.05-1.13.07-1.83-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.36-.15-.19-1.18-1.57-1.18-2.99 0-1.42.75-2.12 1.01-2.41.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.59.82 2.04.89 2.19.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.61-.13.25.09 1.59.75 1.86.89.27.14.45.2.52.31.07.12.07.68-.17 1.36z"/></svg>
+          </span>
+          WhatsApp – Maria Eduarda
         </a>
-        <a class="btn email" href="mailto:guilhermeandmariaeduarda_curitiba2026@gmail.com">
-          ✉️ Send Email
+
+        <a class="btn" href="mailto:guilhermeandmariaeduarda_curitiba2026@gmail.com">
+          <span class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          </span>
+          Our Mail
         </a>
-        <a class="btn maps" href="https://maps.google.com/?q=Curitiba,Parana,Brazil" target="_blank">
-          📍 Our Location
+
+        <a class="btn" href="https://hub.jw.org/meetings/goto/entry-point/meetings?scope_kind=location&scope_id=267e95a4-ecfd-5711-9c53-35c199394cd0&eventId=439d0c38-76a3-4859-8f4b-35e30400b966" target="_blank">
+          <span class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1c8ef0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
+          Our Congregation
         </a>
-        <a class="btn contact" href="contact.vcf">
-          👤 Save Contact
-        </a>
-      </div>
 
       <div class="footer">
         If you need assistance during your stay in Brazil,<br>we'll be happy to help.<br><br>
-        <strong>Welcome to Curitiba 2026! 🇧🇷</strong>
+        <strong>Welcome to Curitiba 2026!</strong>
       </div>
 
     </div>
